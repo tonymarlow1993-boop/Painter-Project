@@ -114,7 +114,6 @@ public class Mandala {
         int midRadius = (outerRadius + innerRadius) / 2;
         int beadRadius = ((outerRadius - innerRadius) / 2);
         int numberOfBeads = 20;
-        int turnTotal = 0;
 
         for (int i = 0; i < numberOfBeads; i++) {
             int r = rand.nextInt(0, 255);
@@ -127,16 +126,13 @@ public class Mandala {
             p.turnLeft(angle);
             p.liftPen();
             p.forward(midRadius - 3.5);
-            // p.turnLeft(360 - angle);
             p.lowerPen();
             p.startFill(color);
             p.circle(beadRadius);
             p.finishFill();
             p.liftPen();
-            // p.turnLeft(angle);
             p.backward(midRadius - 3.5);
             p.lowerPen();
-            angle += angle;
 
         }
 
@@ -182,6 +178,7 @@ public class Mandala {
         mandala2.drawBeads(p, 100, 130, rand);
         mandala2.move(p, 375, 375);
         mandala2.drawBeads(p, 160, 190, rand);
+        mandala2.drawSunburst(p, 285, rand);
 
         mandala3.move(p, -375, -375);
         mandala3.drawSunburst(p, 200, rand);
